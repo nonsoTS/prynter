@@ -1,0 +1,31 @@
+import ContactForm from "./components/ContactForm";
+import Experiences from "./components/Experiences";
+import FAQAccordion from "./components/FAQAccordion";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import Partner from "./components/Partner";
+import Pricing from "./components/Pricing";
+import Solutions from "./components/Solutions";
+import Team from "./components/Team";
+import Testimonials from "./components/Testimonials";
+
+function App() {
+  return (
+    <div className="w-full lg:w-5/6 mx-auto pt-6">
+      <Navbar />
+      <Hero />
+      <Experiences />
+      <Solutions />
+      <Pricing />
+      <Partner />
+      <Testimonials />
+      <Team />
+      <FAQAccordion />
+      <ContactForm />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;

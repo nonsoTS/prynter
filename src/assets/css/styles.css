@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+body {
+  background-color: #f0f0f0;
+}
+
+.add-box-shadow{
+  box-shadow: 0 -12px 16px 16px #f0f0f0;
+}
+
+.add-box-shadow-top{
+  box-shadow: 0 12px 16px 16px #f0f0f0 inset;
+}
+
+/* BUTTON COMP */
+.gradient-button {
+  position: relative;
+  text-align: center;
+  margin: 0px;
+  padding: 16px 24px;
+  width: fit-content;
+  height: auto;
+  background-color: #000000;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.gradient-button:hover:before {
+  transform: scale(1.05);
+  background-image: linear-gradient(to bottom, #fff2ee, #ff3700, #fff2ee);
+  background-size: 100% 200%;
+  -webkit-animation: GradientButton 3s ease infinite;
+  -moz-animation: GradientButton 3s ease infinite;
+  animation: GradientButton 3s ease infinite;
+}
+
+.gradient-button:before {
+  position: absolute;
+  content: "";
+  border-radius: 60px;
+  background-image: linear-gradient(to bottom, #fff2ee, #ff3700);
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.gradient-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.gradient-button:hover:active:before {
+  transform: scale(0.99);
+}
+
+@-webkit-keyframes GradientButton {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 51% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+@-moz-keyframes GradientButton {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 51% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+@keyframes GradientButton {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 51% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+
+
+/* Define the animation */
+@keyframes moveUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+/* Apply to element */
+.scroll-up {
+  animation: moveUp 20s linear infinite;
+}
