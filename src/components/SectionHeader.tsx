@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export default function SectionHeader({ content, classes }: { content: string; classes?: string }) {
   return (

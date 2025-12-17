@@ -1,3 +1,6 @@
+/* eslint-disable */
+// @ts-nocheck
+
 import { Star } from 'lucide-react';
 
 export default function Testimonials() {

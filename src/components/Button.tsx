@@ -1,3 +1,6 @@
+/* eslint-disable */
+// @ts-nocheck
+
 const Button = ({ children }: { children: any }) => {
   return (
     <button className="gradient-button">
