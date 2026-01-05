@@ -4,18 +4,32 @@ body {
   background-color: #f0f0f0;
 }
 
-.add-box-shadow{
+.add-box-shadow {
   box-shadow: 0 -12px 16px 16px #f0f0f0;
 }
 
-.add-box-shadow-top{
+.add-box-shadow-top {
   box-shadow: 0 12px 16px 16px #f0f0f0 inset;
 }
 
 /* BUTTON COMP */
+.gradient-container {
+  position: relative;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 60px;
+  padding: 3px 5px;
+  background-image: linear-gradient(to bottom, #fff2ee, #ff3700);
+  transition: all 3s ease;
+}
+
 .gradient-button {
   position: relative;
   text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
   margin: 0px;
   padding: 16px 24px;
   width: fit-content;
@@ -23,12 +37,12 @@ body {
   background-color: #000000;
   border-radius: 60px;
   cursor: pointer;
-  transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
-.gradient-button:hover:before {
-  transform: scale(1.05);
+.gradient-container:hover {
+  /* transform: scale(1.06); */
+  padding: 3px 6px;
   background-image: linear-gradient(to bottom, #fff2ee, #ff3700, #fff2ee);
   background-size: 100% 200%;
   -webkit-animation: GradientButton 3s ease infinite;
@@ -36,28 +50,17 @@ body {
   animation: GradientButton 3s ease infinite;
 }
 
-.gradient-button:before {
-  position: absolute;
-  content: "";
-  border-radius: 60px;
-  background-image: linear-gradient(to bottom, #fff2ee, #ff3700);
-  top: -2px;
-  bottom: -2px;
-  left: -2px;
-  right: -2px;
-  z-index: -1;
-  transition: transform 0.3s ease;
-}
+/* .gradient-button:hover {
+  transform: scale(1.05);
+} */
 
 .gradient-text {
-  font-size: 16px;
-  font-weight: 500;
-  color: #ffffff;
   transition: all 0.3s ease;
   position: relative;
 }
 
-.gradient-button:hover:active:before {
+.gradient-container:hover:active,
+.gradient-button:hover:active {
   transform: scale(0.99);
 }
 
@@ -95,8 +98,6 @@ body {
   }
 }
 
-
-
 /* Define the animation */
 @keyframes moveUp {
   from {
@@ -110,4 +111,77 @@ body {
 /* Apply to element */
 .scroll-up {
   animation: moveUp 20s linear infinite;
+}
+
+/* Icon 3 */
+
+#nav-icon3 {
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon3 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2),
+#nav-icon3 span:nth-child(3) {
+  top: 50%;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 100%;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
 }

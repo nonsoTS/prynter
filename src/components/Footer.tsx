@@ -1,6 +1,7 @@
+
 export default function Footer() {
   return (
-    <footer className="py-12 px-6">
+    <footer className="bg-[#E5E5E5] py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Newsletter Section */}
@@ -69,22 +70,12 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-sm text-gray-600 hover:text-gray-900">
-                  Articles
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-gray-600 hover:text-gray-900">
                   Privacy policy
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm text-gray-600 hover:text-gray-900">
                   Terms of service
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-gray-600 hover:text-gray-900">
-                  404 Page
                 </a>
               </li>
             </ul>
@@ -96,22 +87,17 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-sm text-gray-600 hover:text-gray-900 flex items-center">
-                  <span className="mr-2">𝕏</span> X(twitter)
+                  <span className="mr-2"><img src="/images/XLogo.svg" className="w-6 h-6" alt="X(twitter)" /></span> X(twitter)
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm text-gray-600 hover:text-gray-900 flex items-center">
-                  <span className="mr-2">📷</span> Instagram
+                  <span className="mr-2"><img src="/images/InstagramLogo.svg" className="w-6 h-6" alt="Instagram" /></span> Instagram
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm text-gray-600 hover:text-gray-900 flex items-center">
-                  <span className="mr-2">in</span> Linkedin
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-gray-600 hover:text-gray-900 flex items-center">
-                  <span className="mr-2">▶</span> You Tube
+                  <span className="mr-2"><img src="/images/LinkedinLogo.svg" className="w-6 h-6" alt="LinkedIn" /></span> Linkedin
                 </a>
               </li>
             </ul>
@@ -121,7 +107,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="pt-8 border-t border-gray-300">
           <p className="text-sm text-gray-600">
-            C2025 Prynter. Designed by Dareem
+            &copy;2025 Prynter. Designed by Doreen
           </p>
         </div>
       </div>

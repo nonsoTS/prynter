@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SectionHeader from './SectionHeader';
+import Button from './Button';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -23,20 +25,17 @@ export default function ContactForm() {
 
   return (
     <div className="min-h-screen p-8">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
         {/* Left Section */}
         <div>
-          <div className="flex items-center gap-2 mb-6">
-            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-            <span className="text-gray-600 text-sm">Contact & Support</span>
-          </div>
+          <SectionHeader content="Contact and Support" classes={"mx-auto lg:mx-0"} />
           
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <p className="text-5xl font-semibold text-gray-900 mb-4">
             Get in touch
-          </h1>
+          </p>
           
           <p className="text-gray-600 mb-8">
-            Got questions? we've got answers. Learn more about Althor and how it can transform your business.
+            Got questions? we’ve got answers. Learn more about Prynter and how it  can transform your business.
           </p>
 
           {/* Contact Info Box */}
@@ -48,13 +47,7 @@ export default function ContactForm() {
             </div>
 
             <div className="mb-6">
-              <div className="text-gray-400 text-sm mb-2">Address</div>
-              <div className="text-white">Janedoe@gmail.com</div>
-              <div className="border-b border-gray-800 mt-4"></div>
-            </div>
-
-            <div>
-              <div className="text-gray-400 text-sm mb-2">Phone Number</div>
+              <div className="text-gray-400 text-sm mb-2">Chat with us</div>
               <div className="text-white">Janedoe@gmail.com</div>
               <div className="border-b border-gray-800 mt-4"></div>
             </div>
@@ -62,10 +55,10 @@ export default function ContactForm() {
         </div>
 
         {/* Right Section - Form */}
-        <div>
+        <div className='bg-[#E5E5E5] p-4 rounded-2xl'>
           <div className="space-y-6">
             <div>
-              <label className="block text-gray-700 text-sm mb-2">
+              <label className="block text-[#343330C7] text-sm mb-2">
                 Full Name
               </label>
               <input
@@ -79,7 +72,7 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label className="block text-gray-700 text-sm mb-2">
+              <label className="block text-[#343330C7] text-sm mb-2">
                 Email
               </label>
               <input
@@ -93,7 +86,7 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label className="block text-gray-700 text-sm mb-2">
+              <label className="block text-[#343330C7] text-sm mb-2">
                 Subject
               </label>
               <input
@@ -107,7 +100,7 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label className="block text-gray-700 text-sm mb-2">
+              <label className="block text-[#343330C7] text-sm mb-2">
                 Message
               </label>
               <textarea
@@ -120,12 +113,7 @@ export default function ContactForm() {
               ></textarea>
             </div>
 
-            <button
-              onClick={handleSubmit}
-              className="w-full bg-black text-white py-4 rounded-full font-medium hover:bg-gray-800 transition-colors"
-            >
-              Send The Message
-            </button>
+            <Button styles="w-full! mt-4" buttonStyles="w-full!" handleClick={handleSubmit}>Send The Message</Button>
           </div>
         </div>
       </div>

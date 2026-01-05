@@ -1,36 +1,34 @@
-/* eslint-disable */
-// @ts-nocheck
-
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 export default function FAQAccordion() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
     {
-      question: "01/ What does the membership include?",
+      question: "01/ How fast is your turnaround time?",
       answer: "The membership gives you unlimited access, regular updates, priority, support, and expert resources to guide your business goals"
     },
     {
-      question: "02/ What does the membership include?",
+      question: "02/ Do you offer design services?",
       answer: "The membership gives you unlimited access, regular updates, priority, support, and expert resources to guide your business goals"
     },
     {
-      question: "03/ What does the membership include?",
+      question: "03/ Do you provide installation for branded spaces and events?",
       answer: "The membership gives you unlimited access, regular updates, priority, support, and expert resources to guide your business goals"
     },
     {
-      question: "04/ What does the membership include?",
+      question: "04/ What file formats do you accept?",
       answer: "The membership gives you unlimited access, regular updates, priority, support, and expert resources to guide your business goals"
     },
     {
-      question: "05/ What does the membership include?",
+      question: "05/ Can you handle regional or global deliveries?",
       answer: "The membership gives you unlimited access, regular updates, priority, support, and expert resources to guide your business goals"
     }
   ];
 
-  const toggleAccordion = (index) => {
+  const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
@@ -39,33 +37,31 @@ export default function FAQAccordion() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
         {/* Left side - Header */}
         <div className="flex flex-col justify-start pt-8">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-            <span className="text-sm font-medium text-gray-600">FAQs</span>
-          </div>
-          <h1 className="text-6xl font-bold text-gray-900 mb-4">
+          <SectionHeader content="FAQs" classes={"mx-auto lg:mx-0"} />
+
+          <p className="text-5xl lg:text-6xl font-semibold text-gray-900 mb-4 text-center lg:text-left">
             Need answers?
-          </h1>
-          <p className="text-gray-600 text-lg">
-            Got questions? we've got answers. Learn more about Althor and how it can transform your business.
+          </p>
+          <p className="text-gray-600 text-sm lg:text-lg mr-0 lg:mr-6 text-center lg:text-left">
+            Got questions? we’ve got answers. Learn more about Pryntar and how it  can transform your business.
           </p>
         </div>
 
         {/* Right side - Accordion */}
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {faqs.map((faq, index: number) => (
             <div
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-sm"
             >
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 cursor-pointer transition duration-700 ease-in-out"
               >
                 <span className="text-lg font-medium text-gray-900">
                   {faq.question}
                 </span>
-                <div className="flex-shrink-0 ml-4 w-6 h-6 bg-gray-900 rounded flex items-center justify-center">
+                <div className="shrink-0 ml-4 w-6 h-6 bg-gray-900 rounded flex items-center justify-center">
                   {openIndex === index ? (
                     <Minus className="w-4 h-4 text-white" />
                   ) : (

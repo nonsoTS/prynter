@@ -67,7 +67,7 @@ export default function Hero() {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-8">
+    <div className="min-h-screen flex items-center justify-center px-2 lg:px-8">
       <div className="relative w-full">
         {/* Feature Cards */}
         <div className="relative w-full h-[75vh] flex flex-col items-center justify-start overflow-hidden">
@@ -75,34 +75,34 @@ export default function Hero() {
             {[...features, ...features, ...features].map((feature, index) => (
               <div
                 key={index}
-                className="bg-white p-2 pr-5 shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center justify-between group cursor-pointer border-4 border-gray-200 hover:border-gray-300 rounded-full"
+                className="bg-white p-1.5 pr-3 shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center justify-between group cursor-pointer border-2 border-gray-200 hover:border-gray-300 rounded-full"
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
                   <div
-                    className={`bg-gray-200 w-14 h-14 rounded-full flex items-center justify-center`}
+                    className={`bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center`}
                   >
-                    <feature.icon className={`w-6 h-6 ${feature.color}`} />
+                    <feature.icon className={`w-4 h-4 ${feature.color}`} />
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="font-semibold text-gray-900">
+                    <div className="flex items-center gap-1.5 mb-0.5">
+                      <span className="font-semibold text-gray-900 text-sm">
                         {feature.title}
                       </span>
-                      <span className="text-gray-400 font-light">
+                      <span className="text-gray-400 font-light text-sm">
                         {feature.arrow}
                       </span>
-                      <span className="font-semibold text-gray-900">
+                      <span className="font-semibold text-gray-900 text-sm">
                         {feature.subtitle}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-xs text-gray-500">
                       {feature.description}
                     </p>
                   </div>
                 </div>
                 <div className="rotate-90">
                   <svg
-                    className="w-6 h-6 text-gray-400"
+                    className="w-4 h-4 text-gray-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -121,18 +121,22 @@ export default function Hero() {
         </div>
 
         {/* Hero Content */}
-        <div className="absolute bottom-0 right-0 left-0 bg-[#f0f0f0] add-box-shadow p-4 text-center">
-          <p className="text-5xl md:text-6xl font-semibold text-gray-900 mb-4 leading-tight">
+        <div className="absolute bottom-0 right-0 left-0 bg-[#f0f0f0] add-box-shadow p-2 lg:p-4 text-center">
+          <p className="text-3xl md:text-6xl font-semibold text-gray-900 mb-4 leading-tight">
             Merch, events and
             <br />
             Prints made memorable
           </p>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-600 mb-8 text-sm lg:text-base">
             We bring your ideas to life with precision, speed and excellence.
           </p>
-          <div className="relative flex gap-4 justify-center">
-            <Button>Request a Quote</Button>
-            <Button>Explore Our Services</Button>
+          <div className="flex flex-col lg:flex-row items-center gap-4 justify-center">
+            <Button styles="w-full! lg:w-fit!" buttonStyles="w-full! lg:w-fit!">
+              Request a Quote
+            </Button>
+            <Button styles="w-full! lg:w-fit!" buttonStyles="w-full! lg:w-fit!">
+              Explore Our Services
+            </Button>
           </div>
         </div>
       </div>
