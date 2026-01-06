@@ -5,14 +5,17 @@ import { useInView } from "react-intersection-observer";
 export default function Solutions() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
   });
 
   return (
     <div id="about" className="min-h-screen p-8 pt-20 lg:pt-30">
       <div ref={ref} className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className={`animate__animated ${ inView ? "animate__fadeInRight animate__slow" : "opacity-0" } mb-12`}>
+        <div
+          className={`animate__animated ${
+            inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+          } mb-12`}
+        >
           <SectionHeader content="About Us" classes={"mx-auto lg:mx-0"} />
 
           <div className="flex flex-col lg:flex-row items-start justify-between">
@@ -28,7 +31,11 @@ export default function Solutions() {
         </div>
 
         {/* Content Grid */}
-        <div className={`animate__animated ${ inView ? "animate__fadeInLeft animate__slow" : "opacity-0" } grid grid-cols-1 lg:grid-cols-3 justify-stretch gap-6 bg-[#E3E3E3] rounded-3xl p-2`}>
+        <div
+          className={`animate__animated ${
+            inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+          } grid grid-cols-1 lg:grid-cols-3 justify-stretch gap-6 bg-[#E3E3E3] rounded-3xl p-2`}
+        >
           {/* Mission/Vision Card */}
           <div className="bg-black text-white p-8 rounded-3xl">
             <Brain className="w-8 h-8 mb-4" />

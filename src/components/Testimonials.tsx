@@ -5,7 +5,6 @@ import { useInView } from "react-intersection-observer";
 export default function Testimonials() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
   });
 
   const testimonials = [
@@ -39,7 +38,11 @@ export default function Testimonials() {
     <div id="clients" className="min-h-screen py-16 px-4 pt-20 lg:pt-30">
       <div ref={ref} className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className={`animate__animated ${ inView ? "animate__fadeInRight animate__slow" : "opacity-0" } flex justify-between items-start mb-12`}>
+        <div
+          className={`animate__animated ${
+            inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+          } flex justify-between items-start mb-12`}
+        >
           <div>
             <SectionHeader content="Our Clients" />
 
@@ -56,7 +59,11 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonial Cards */}
-        <div className={`animate__animated ${ inView ? "animate__fadeInLeft animate__slow" : "opacity-0" } grid grid-cols-1 md:grid-cols-3 gap-6`}>
+        <div
+          className={`animate__animated ${
+            inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+          } grid grid-cols-1 md:grid-cols-3 gap-6`}
+        >
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}

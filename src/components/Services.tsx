@@ -5,13 +5,16 @@ import SectionHeader from "./SectionHeader";
 export default function Services() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
   });
 
   return (
     <div ref={ref} id="services" className="min-h-screen p-8 pt-20 lg:pt-30">
       {/* Header */}
-      <div className={`animate__animated ${ inView ? "animate__fadeInRight animate__slow" : "opacity-0" } max-w-7xl mx-auto mb-12`}>
+      <div
+        className={`animate__animated ${
+          inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+        } max-w-7xl mx-auto mb-12`}
+      >
         <SectionHeader content="Services" classes={"mx-auto"} />
 
         <p className="text-3xl lg:text-6xl font-bold lg:font-semibold text-center mb-4">
@@ -27,7 +30,11 @@ export default function Services() {
       </div>
 
       {/* Cards Grid */}
-      <div className={`animate__animated ${ inView ? "animate__fadeInLeft animate__slow" : "opacity-0" } mx-auto grid grid-cols-1 md:grid-cols-3 gap-6`}>
+      <div
+        className={`animate__animated ${
+          inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+        } mx-auto grid grid-cols-1 md:grid-cols-3 gap-6`}
+      >
         <div className="flex flex-col justify-between items-stretch bg-[#E5E5E5] rounded-3xl p-4 shadow-sm">
           <div>
             <Printer className="w-6 h-6 mb-2" />

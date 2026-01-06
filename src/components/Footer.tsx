@@ -3,11 +3,15 @@ import { useInView } from "react-intersection-observer";
 export default function Footer() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
   });
 
   return (
-    <footer ref={ref} className={`animate__animated ${ inView ? "animate__fadeInUp animate__slow" : "opacity-0" } bg-[#E5E5E5] py-12 px-6`}>
+    <footer
+      ref={ref}
+      className={`animate__animated ${
+        inView ? "animate__fadeInUp animate__slow" : "opacity-0"
+      } bg-[#E5E5E5] py-12 px-6`}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Newsletter Section */}

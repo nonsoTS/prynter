@@ -6,7 +6,6 @@ import { useInView } from "react-intersection-observer";
 export default function ContactForm() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
   });
 
   const [formData, setFormData] = useState({
@@ -35,7 +34,11 @@ export default function ContactForm() {
     <div id="contact" className="min-h-screen p-8 pt-20 lg:pt-30">
       <div ref={ref} className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
         {/* Left Section */}
-        <div className={`animate__animated ${ inView ? "animate__fadeInLeft animate__slow" : "opacity-0" }`}>
+        <div
+          className={`animate__animated ${
+            inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+          }`}
+        >
           <SectionHeader
             content="Contact and Support"
             classes={"mx-auto lg:mx-0"}
@@ -67,7 +70,11 @@ export default function ContactForm() {
         </div>
 
         {/* Right Section - Form */}
-        <div className={`animate__animated ${ inView ? "animate__fadeInRight animate__slow" : "opacity-0" } bg-[#E5E5E5] p-4 rounded-2xl`}>
+        <div
+          className={`animate__animated ${
+            inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+          } bg-[#E5E5E5] p-4 rounded-2xl`}
+        >
           <div className="space-y-6">
             <div>
               <label className="block text-[#343330C7] text-sm mb-2">

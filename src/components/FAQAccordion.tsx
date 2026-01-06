@@ -8,7 +8,6 @@ export default function FAQAccordion() {
 
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
   });
 
   const faqs = [
@@ -48,7 +47,11 @@ export default function FAQAccordion() {
     <div id="faqs" className="min-h-screen p-8 pt-20 lg:pt-30">
       <div ref={ref} className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
         {/* Left side - Header */}
-        <div className={`animate__animated ${ inView ? "animate__fadeInLeft animate__slow" : "opacity-0" } flex flex-col justify-start pt-8`}>
+        <div
+          className={`animate__animated ${
+            inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+          } flex flex-col justify-start pt-8`}
+        >
           <SectionHeader content="FAQs" classes={"mx-auto lg:mx-0"} />
 
           <p className="text-5xl lg:text-6xl font-semibold text-gray-900 mb-4 text-center lg:text-left">
@@ -61,7 +64,11 @@ export default function FAQAccordion() {
         </div>
 
         {/* Right side - Accordion */}
-        <div className={`animate__animated ${ inView ? "animate__fadeInRight animate__slow" : "opacity-0" } space-y-4`}>
+        <div
+          className={`animate__animated ${
+            inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+          } space-y-4`}
+        >
           {faqs.map((faq, index: number) => (
             <div
               key={index}
