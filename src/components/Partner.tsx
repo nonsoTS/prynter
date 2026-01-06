@@ -43,7 +43,7 @@ export default function Partner() {
         {/* Header Section */}
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+            inView ? "animate__fadeInRight" : "opacity-0"
           } text-center mb-16`}
         >
           <SectionHeader content="Why Us?" classes={"mx-auto"} />
@@ -63,7 +63,7 @@ export default function Partner() {
         {/* Comparison Cards */}
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+            inView ? "animate__fadeInLeft" : "opacity-0"
           } bg-[#E5E5E5] grid grid-cols-1 md:grid-cols-3 gap-6 p-3 rounded-3xl`}
         >
           {/* First Column - Other Agencies */}

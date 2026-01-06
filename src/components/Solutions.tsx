@@ -13,7 +13,7 @@ export default function Solutions() {
         {/* Header Section */}
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+            inView ? "animate__fadeInRight" : "opacity-0"
           } mb-12`}
         >
           <SectionHeader content="About Us" classes={"mx-auto lg:mx-0"} />
@@ -33,7 +33,7 @@ export default function Solutions() {
         {/* Content Grid */}
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+            inView ? "animate__fadeInLeft" : "opacity-0"
           } grid grid-cols-1 lg:grid-cols-3 justify-stretch gap-6 bg-[#E3E3E3] rounded-3xl p-2`}
         >
           {/* Mission/Vision Card */}

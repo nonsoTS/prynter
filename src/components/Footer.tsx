@@ -9,7 +9,7 @@ export default function Footer() {
     <footer
       ref={ref}
       className={`animate__animated ${
-        inView ? "animate__fadeInUp animate__slow" : "opacity-0"
+        inView ? "animate__fadeInUp" : "opacity-0"
       } bg-[#E5E5E5] py-12 px-6`}
     >
       <div className="max-w-6xl mx-auto">

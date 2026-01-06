@@ -13,7 +13,7 @@ const Pricing = () => {
         {/* Header */}
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+            inView ? "animate__fadeInRight" : "opacity-0"
           } text-center mb-12`}
         >
           <SectionHeader content="Our Pricing" classes={"mx-auto"} />
@@ -31,7 +31,7 @@ const Pricing = () => {
 
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+            inView ? "animate__fadeInLeft" : "opacity-0"
           } grid grid-cols-1 lg:grid-cols-3 gap-6`}
         >
           <div className="bg-black text-white rounded-3xl p-2 transition duration-700 ease-in-out shadow-2xl/30 hover:shadow-2xl/80 hover:-translate-y-4">

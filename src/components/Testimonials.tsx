@@ -40,7 +40,7 @@ export default function Testimonials() {
         {/* Header */}
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+            inView ? "animate__fadeInRight" : "opacity-0"
           } flex justify-between items-start mb-12`}
         >
           <div>
@@ -61,7 +61,7 @@ export default function Testimonials() {
         {/* Testimonial Cards */}
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+            inView ? "animate__fadeInLeft" : "opacity-0"
           } grid grid-cols-1 md:grid-cols-3 gap-6`}
         >
           {testimonials.map((testimonial) => (

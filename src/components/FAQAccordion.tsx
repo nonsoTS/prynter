@@ -49,7 +49,7 @@ export default function FAQAccordion() {
         {/* Left side - Header */}
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+            inView ? "animate__fadeInLeft" : "opacity-0"
           } flex flex-col justify-start pt-8`}
         >
           <SectionHeader content="FAQs" classes={"mx-auto lg:mx-0"} />
@@ -66,7 +66,7 @@ export default function FAQAccordion() {
         {/* Right side - Accordion */}
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+            inView ? "animate__fadeInRight" : "opacity-0"
           } space-y-4`}
         >
           {faqs.map((faq, index: number) => (

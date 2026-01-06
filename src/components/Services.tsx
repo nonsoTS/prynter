@@ -12,7 +12,7 @@ export default function Services() {
       {/* Header */}
       <div
         className={`animate__animated ${
-          inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+          inView ? "animate__fadeInRight" : "opacity-0"
         } max-w-7xl mx-auto mb-12`}
       >
         <SectionHeader content="Services" classes={"mx-auto"} />
@@ -32,7 +32,7 @@ export default function Services() {
       {/* Cards Grid */}
       <div
         className={`animate__animated ${
-          inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+          inView ? "animate__fadeInLeft" : "opacity-0"
         } mx-auto grid grid-cols-1 md:grid-cols-3 gap-6`}
       >
         <div className="flex flex-col justify-between items-stretch bg-[#E5E5E5] rounded-3xl p-4 shadow-sm">

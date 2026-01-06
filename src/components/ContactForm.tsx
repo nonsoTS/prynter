@@ -36,7 +36,7 @@ export default function ContactForm() {
         {/* Left Section */}
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInLeft animate__slow" : "opacity-0"
+            inView ? "animate__fadeInLeft" : "opacity-0"
           }`}
         >
           <SectionHeader
@@ -72,7 +72,7 @@ export default function ContactForm() {
         {/* Right Section - Form */}
         <div
           className={`animate__animated ${
-            inView ? "animate__fadeInRight animate__slow" : "opacity-0"
+            inView ? "animate__fadeInRight" : "opacity-0"
           } bg-[#E5E5E5] p-4 rounded-2xl`}
         >
           <div className="space-y-6">
