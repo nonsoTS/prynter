@@ -35,7 +35,7 @@ export default function MobileNav({
             className={`flex flex-col items-center justify-start w-full h-fit p-5 pt-10 z-999`}
           >
             <div
-              className={`w-full h-full flex flex-col items-start justify-start gap-y-4 pl-5 pt-10 bg-black text-white border-2 border-white border-solid text-4xl text-bold font_bold rounded-3xl`}
+              className={`w-full h-full min-h-screen flex flex-col items-start justify-start gap-y-4 pl-5 pt-10 bg-black text-white border-2 border-white border-solid text-4xl text-bold font_bold rounded-3xl`}
             >
               {links &&
                 links.map((link) => (
