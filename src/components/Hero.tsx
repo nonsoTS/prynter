@@ -79,7 +79,7 @@ export default function Hero() {
               >
                 <div className="flex items-center gap-2">
                   <div
-                    className={`bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center`}
+                    className={`bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center shrink-0`}
                   >
                     <feature.icon className={`w-4 h-4 ${feature.color}`} />
                   </div>
