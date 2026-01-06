@@ -1,10 +1,16 @@
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
+import Button from "./Button";
 
-export default function MobileNav({ styles = "" }: { styles?: string }) {
-
+export default function MobileNav({
+  styles = "",
+  links,
+}: {
+  styles?: string;
+  links?: { name: string; target: string }[];
+}) {
   return (
     <Popover className={"relative " + styles}>
-      {({ open } : { open: boolean }) => (
+      {({ open, close }: { open: boolean; close: () => void }) => (
         <>
           <div
             className={`bg-black flex flex-col items-center justify-center w-12 h-12 rounded-full duration-300 ease-in-out ${
@@ -26,34 +32,34 @@ export default function MobileNav({ styles = "" }: { styles?: string }) {
 
           <PopoverPanel
             anchor="bottom"
-            className={`flex flex-col items-center justify-start w-full h-full p-3 pt-10  z-50`}
+            className={`flex flex-col items-center justify-start w-full h-fit p-5 pt-10  z-50`}
           >
             <div
               className={`w-full h-full flex flex-col items-start justify-start gap-y-4 pl-5 pt-10 bg-black text-white border-2 border-white border-solid text-4xl text-bold font_bold rounded-3xl`}
             >
-              <a href={"/"}>
-                <p className={`${"text-[#D3E97A]"}`}>
-                  Home
-                </p>
-              </a>
+              {links &&
+                links.map((link) => (
+                  <>
+                    <a
+                      key={link.target}
+                      href={link.target}
+                      onClick={() => close()}
+                    >
+                      <p className={`${"text-[#D3E97A]"}`}>{link.name}</p>
+                    </a>
 
-              <hr className="border border-white w-full" />
+                    <hr className="border border-white w-full" />
+                  </>
+                ))}
 
-              <a href={"/about"}>
-                <p className={`${"text-[#D3E97A]"}`}>
-                  About
-                </p>
-              </a>
-
-              <hr className="border border-white w-full" />
-
-              <a href={"/projects"}>
-                <p
-                  className={`${"text-[#D3E97A]"}`}
-                >
-                  Projects
-                </p>
-              </a>
+              <Button
+                link="#contact"
+                styles="w-5/6! block! mx-auto! mb-3"
+                buttonStyles="w-full!"
+                handleClick={() => close()}
+              >
+                Book A Call
+              </Button>
             </div>
           </PopoverPanel>
         </>

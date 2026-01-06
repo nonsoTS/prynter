@@ -12,18 +12,20 @@ import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
-    <div className="w-full lg:w-5/6 mx-auto py-2 lg:py-6">
-      <Navbar />
-      <Hero />
-      <Experiences />
-      <Solutions />
-      <Pricing />
-      <Partner />
-      <Testimonials />
-      {/* <Team /> */}
-      <FAQAccordion />
-      <ContactForm />
-      <Footer />
+    <div id="home" className="w-full overflow-x-hidden">
+      <div className="w-full lg:w-5/6 mx-auto py-2 lg:py-6">
+        <Navbar />
+        <Hero />
+        <Experiences />
+        <Solutions />
+        <Pricing />
+        <Partner />
+        <Testimonials />
+        {/* <Team /> */}
+        <FAQAccordion />
+        <ContactForm />
+        <Footer />
+      </div>
     </div>
   );
 }

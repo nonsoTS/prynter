@@ -1,5 +1,6 @@
 import { X, Check } from "lucide-react";
 import SectionHeader from "./SectionHeader";
+import { useInView } from "react-intersection-observer";
 
 export default function Partner() {
   const perks = {
@@ -29,11 +30,19 @@ export default function Partner() {
     ],
   };
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
   return (
-    <div className="min-h-screen flex items-center justify-center p-8">
-      <div className="max-w-6xl w-full">
+    <div
+      id="whyUs"
+      className="min-h-screen flex items-center justify-center p-8 pt-20 lg:pt-30"
+    >
+      <div ref={ref} className="max-w-6xl w-full">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className={`animate__animated ${ inView ? "animate__fadeInRight animate__slow" : "opacity-0" } text-center mb-16`}>
           <SectionHeader content="Why Us?" classes={"mx-auto"} />
 
           <p className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
@@ -49,7 +58,7 @@ export default function Partner() {
         </div>
 
         {/* Comparison Cards */}
-        <div className="bg-[#E5E5E5] grid grid-cols-1 md:grid-cols-3 gap-6 p-3 rounded-3xl">
+        <div className={`animate__animated ${ inView ? "animate__fadeInLeft animate__slow" : "opacity-0" } bg-[#E5E5E5] grid grid-cols-1 md:grid-cols-3 gap-6 p-3 rounded-3xl`}>
           {/* First Column - Other Agencies */}
           <div className="rounded-3xl p-8">
             <h3 className="text-xl font-semibold mb-8">Other Companies</h3>

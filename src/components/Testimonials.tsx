@@ -1,6 +1,13 @@
 import { Star } from "lucide-react";
+import SectionHeader from "./SectionHeader";
+import { useInView } from "react-intersection-observer";
 
 export default function Testimonials() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
   const testimonials = [
     {
       id: 1,
@@ -29,17 +36,13 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="min-h-screen py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div id="clients" className="min-h-screen py-16 px-4 pt-20 lg:pt-30">
+      <div ref={ref} className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-start mb-12">
+        <div className={`animate__animated ${ inView ? "animate__fadeInRight animate__slow" : "opacity-0" } flex justify-between items-start mb-12`}>
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-              <span className="text-sm font-medium text-gray-700">
-                Our Clients
-              </span>
-            </div>
+            <SectionHeader content="Our Clients" />
+
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
               What our clients say
             </h1>
@@ -53,7 +56,7 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonial Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className={`animate__animated ${ inView ? "animate__fadeInLeft animate__slow" : "opacity-0" } grid grid-cols-1 md:grid-cols-3 gap-6`}>
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}

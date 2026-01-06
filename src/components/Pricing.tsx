@@ -1,12 +1,18 @@
 import SectionHeader from "./SectionHeader";
 import Button from "./Button";
+import { useInView } from "react-intersection-observer";
 
 const Pricing = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
   return (
-    <div className="min-h-screen py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div id="pricing" className="min-h-screen py-16 px-4 pt-20 lg:pt-30">
+      <div ref={ref} className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className={`animate__animated ${ inView ? "animate__fadeInRight animate__slow" : "opacity-0" } text-center mb-12`}>
           <SectionHeader content="Our Pricing" classes={"mx-auto"} />
 
           <p className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
@@ -20,7 +26,7 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className={`animate__animated ${ inView ? "animate__fadeInLeft animate__slow" : "opacity-0" } grid grid-cols-1 lg:grid-cols-3 gap-6`}>
           <div className="bg-black text-white rounded-3xl p-2 transition duration-700 ease-in-out shadow-2xl/30 hover:shadow-2xl/80 hover:-translate-y-4">
             <div className="bg-[#E5E5E5] text-black rounded-3xl p-3">
               <div className="bg-black text-white rounded-3xl px-3 py-6 space-y-2">
@@ -34,7 +40,9 @@ const Pricing = () => {
                   For events, campaigns, ceremonies, launches, and celebrations
                 </p>
 
-                <Button styles="w-full! mt-4" buttonStyles="w-full!">Get a quote</Button>
+                <Button link="#contact" styles="w-full! mt-4" buttonStyles="w-full!">
+                  Get a quote
+                </Button>
               </div>
             </div>
             <div className="p-3 mt-3">
@@ -63,7 +71,9 @@ const Pricing = () => {
                   subsidiaries
                 </p>
 
-                <Button styles="w-full! mt-4" buttonStyles="w-full!">Get a quote</Button>
+                <Button link="#contact" styles="w-full! mt-4" buttonStyles="w-full!">
+                  Get a quote
+                </Button>
               </div>
             </div>
             <div className="p-3 mt-3">
@@ -95,7 +105,9 @@ const Pricing = () => {
                   For events, campaigns, ceremonies, launches, and celebrations
                 </p>
 
-                <Button styles="w-full! mt-4" buttonStyles="w-full!">Get a quote</Button>
+                <Button link="#contact" styles="w-full! mt-4" buttonStyles="w-full!">
+                  Get a quote
+                </Button>
               </div>
             </div>
             <div className="p-3 mt-3">

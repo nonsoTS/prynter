@@ -1,12 +1,18 @@
 import { Brain, Goal, Printer } from "lucide-react";
 import SectionHeader from "./SectionHeader";
+import { useInView } from "react-intersection-observer";
 
 export default function Solutions() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
   return (
-    <div className="min-h-screen p-8">
-      <div className="max-w-6xl mx-auto">
+    <div id="about" className="min-h-screen p-8 pt-20 lg:pt-30">
+      <div ref={ref} className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className="mb-12">
+        <div className={`animate__animated ${ inView ? "animate__fadeInRight animate__slow" : "opacity-0" } mb-12`}>
           <SectionHeader content="About Us" classes={"mx-auto lg:mx-0"} />
 
           <div className="flex flex-col lg:flex-row items-start justify-between">
@@ -22,7 +28,7 @@ export default function Solutions() {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 justify-stretch gap-6 bg-[#E3E3E3] rounded-3xl p-2">
+        <div className={`animate__animated ${ inView ? "animate__fadeInLeft animate__slow" : "opacity-0" } grid grid-cols-1 lg:grid-cols-3 justify-stretch gap-6 bg-[#E3E3E3] rounded-3xl p-2`}>
           {/* Mission/Vision Card */}
           <div className="bg-black text-white p-8 rounded-3xl">
             <Brain className="w-8 h-8 mb-4" />
@@ -49,14 +55,18 @@ export default function Solutions() {
               <Printer className="w-8 h-8 mb-4" />
               <h3 className="text-xl font-bold mb-3">What We Do</h3>
               <p className="text-sm text-gray-300 leading-relaxed">
-                We bring ideas to life through premium prints, branded assets, and event merchandise. From launch to scale, Pryntar is your reliable engine for world-class results.
+                We bring ideas to life through premium prints, branded assets,
+                and event merchandise. From launch to scale, Pryntar is your
+                reliable engine for world-class results.
               </p>
             </div>
             <div>
               <Goal className="w-8 h-8 mb-4" />
               <h3 className="text-xl font-bold mb-3">How We Deliver</h3>
               <p className="text-sm text-gray-300 leading-relaxed">
-                With an expert team and modern technology, we manage every project from design to delivery—ensuring precision, consistency, and speed at every stage.
+                With an expert team and modern technology, we manage every
+                project from design to delivery—ensuring precision, consistency,
+                and speed at every stage.
               </p>
             </div>
           </div>
@@ -65,9 +75,7 @@ export default function Solutions() {
           <div className="h-full flex flex-col justify-stretch items-stretch gap-2">
             <div className="flex flex-col justify-between items-start bg-white p-8 rounded-3xl h-1/2">
               <div className="text-4xl font-bold mb-4">155+</div>
-              <div className="text-sm font-bold">
-                Happy clients worldwide
-              </div>
+              <div className="text-sm font-bold">Happy clients worldwide</div>
             </div>
             <div className="flex flex-col justify-between items-start bg-white p-8 rounded-3xl h-1/2">
               <div className="text-4xl font-bold mb-4">45%</div>

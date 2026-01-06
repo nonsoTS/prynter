@@ -70,12 +70,12 @@ export default function Hero() {
     <div className="min-h-screen flex items-center justify-center px-2 lg:px-8">
       <div className="relative w-full">
         {/* Feature Cards */}
-        <div className="relative w-full h-[75vh] flex flex-col items-center justify-start overflow-hidden">
-          <div className="w-full lg:w-1/2 space-y-4 scroll-up">
+        <div className="relative w-full h-[90vh] lg:h-[75vh] flex flex-col items-center justify-start overflow-hidden">
+          <div className="w-5/6 lg:w-1/2 space-y-4 scroll-up">
             {[...features, ...features, ...features].map((feature, index) => (
               <div
                 key={index}
-                className="bg-white p-1.5 pr-3 shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center justify-between group cursor-pointer border-2 border-gray-200 hover:border-gray-300 rounded-full"
+                className="animate__animated animate__fadeInUp bg-white p-1.5 pr-3 shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center justify-between group cursor-pointer border-2 border-gray-200 hover:border-gray-300 rounded-full"
               >
                 <div className="flex items-center gap-2">
                   <div
@@ -121,7 +121,7 @@ export default function Hero() {
         </div>
 
         {/* Hero Content */}
-        <div className="absolute bottom-0 right-0 left-0 bg-[#f0f0f0] add-box-shadow p-2 lg:p-4 text-center">
+        <div className="animate__animated animate__fadeInUp absolute bottom-0 right-0 left-0 bg-[#f0f0f0] add-box-shadow p-2 lg:p-4 text-center">
           <p className="text-3xl md:text-6xl font-semibold text-gray-900 mb-4 leading-tight">
             Merch, events and
             <br />
@@ -131,10 +131,10 @@ export default function Hero() {
             We bring your ideas to life with precision, speed and excellence.
           </p>
           <div className="flex flex-col lg:flex-row items-center gap-4 justify-center">
-            <Button styles="w-full! lg:w-fit!" buttonStyles="w-full! lg:w-fit!">
+            <Button link="#contact" styles="w-full! lg:w-fit!" buttonStyles="w-full! lg:w-fit!">
               Request a Quote
             </Button>
-            <Button styles="w-full! lg:w-fit!" buttonStyles="w-full! lg:w-fit!">
+            <Button link="#services" styles="w-full! lg:w-fit!" buttonStyles="w-full! lg:w-fit!">
               Explore Our Services
             </Button>
           </div>

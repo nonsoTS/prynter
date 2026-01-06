@@ -1,41 +1,53 @@
-import React, { useState } from 'react';
-import SectionHeader from './SectionHeader';
-import Button from './Button';
+import React, { useState } from "react";
+import SectionHeader from "./SectionHeader";
+import Button from "./Button";
+import { useInView } from "react-intersection-observer";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    subject: '',
-    message: ''
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = () => {
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     // Add your form submission logic here
   };
 
   return (
-    <div className="min-h-screen p-8">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+    <div id="contact" className="min-h-screen p-8 pt-20 lg:pt-30">
+      <div ref={ref} className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
         {/* Left Section */}
-        <div>
-          <SectionHeader content="Contact and Support" classes={"mx-auto lg:mx-0"} />
-          
+        <div className={`animate__animated ${ inView ? "animate__fadeInLeft animate__slow" : "opacity-0" }`}>
+          <SectionHeader
+            content="Contact and Support"
+            classes={"mx-auto lg:mx-0"}
+          />
+
           <p className="text-5xl font-semibold text-gray-900 mb-4">
             Get in touch
           </p>
-          
+
           <p className="text-gray-600 mb-8">
-            Got questions? we’ve got answers. Learn more about Prynter and how it  can transform your business.
+            Got questions? we’ve got answers. Learn more about Pryntar and how
+            it can transform your business.
           </p>
 
           {/* Contact Info Box */}
@@ -55,7 +67,7 @@ export default function ContactForm() {
         </div>
 
         {/* Right Section - Form */}
-        <div className='bg-[#E5E5E5] p-4 rounded-2xl'>
+        <div className={`animate__animated ${ inView ? "animate__fadeInRight animate__slow" : "opacity-0" } bg-[#E5E5E5] p-4 rounded-2xl`}>
           <div className="space-y-6">
             <div>
               <label className="block text-[#343330C7] text-sm mb-2">
@@ -113,7 +125,13 @@ export default function ContactForm() {
               ></textarea>
             </div>
 
-            <Button styles="w-full! mt-4" buttonStyles="w-full!" handleClick={handleSubmit}>Send The Message</Button>
+            <Button
+              styles="w-full! mt-4"
+              buttonStyles="w-full!"
+              handleClick={handleSubmit}
+            >
+              Send The Message
+            </Button>
           </div>
         </div>
       </div>
